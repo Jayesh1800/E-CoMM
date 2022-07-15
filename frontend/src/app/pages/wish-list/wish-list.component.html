@@ -1,0 +1,53 @@
+<style>
+    .h{
+        font-weight: 700;
+    }
+</style>
+
+
+
+<h1 align="center" class="display-4 mb-5 h">WishList</h1>
+
+<!--Cart Detail Table-->
+<table>
+    <thead>
+    <tr class="table-title">
+        <th scope="col">Photo</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Cost</th>
+        <th scope="col">Status</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let productInOrder of page?.content">
+      
+        <th class="align-middle" scope="row">
+            <a routerLink="/product/{{productInOrder.product.productId}}"><img height="100px"
+                                                                       src="{{productInOrder.product.productIcon}}"
+                                                                       alt="{{productInOrder.product.productName}}"></a>
+        </th>
+       <td class="align-middle">
+        {{productInOrder.product.productId}}
+       </td>
+        <td class="align-middle"><a
+                routerLink="/product/{{productInOrder.product.productId}}">{{productInOrder.product.productName}}</a></td>
+        <td class="align-middle">{{productInOrder.product.productPrice | currency:"INR":"symbol"}}</td>
+         
+        
+        <td class="align-middle" >
+            <a (click)="handleRemoveFromWishList(productInOrder.product.productId)" routerLink="/wishlist">Delete</a>
+        </td>
+      
+    </tr>
+
+    </tbody>
+</table>
+
+<ng-template #empty>
+    <h4 class="text-muted text-center">Wishlist Empty </h4>
+</ng-template>
+
+

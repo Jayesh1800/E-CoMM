@@ -1,0 +1,147 @@
+<style>
+    .h{
+        font-size: 30px;
+        color:black
+    
+    }
+    .h1{
+        /* font-size: 20px; */
+        color: rgb(245, 146, 17);
+    }
+    
+    ul{
+        position: relative;
+        display: inline-block;
+        list-style: none;
+    }
+    li{
+        width: 100px;
+        height: 30px;
+    }
+    ul:hover .li-wrapper{
+        display: block;
+        background-color: #bebe;
+        padding:10px;
+    }
+    .active{
+        display: block;
+        background-color: #bebe;
+        padding:10px;
+    }
+    .li-wrapper{
+        position: absolute;
+        display: none;
+        margin: 3px 0;
+    }
+</style>
+
+<script>
+
+    document.getElementsByClassName('profile-dropdown')[0].onclick = function(ele){
+        e = document.getElementsByClassName('li-wrapper')[0];
+        if(e.style.display=="none"){
+           e.style.display = "block";
+            e.classList.add('active');
+        }else{
+           e.style.display = "none";
+            e.classList.remove('active');
+        }
+    }
+    
+</script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand h" [routerLink]="root">
+            <img src="/assets/home.png" width="80px" height="50" class="d-inline-block align-top" alt="">
+        </a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse h1" id="navbarNav">
+    
+            <div class="navbar-nav " *ngIf="!currentUser || currentUser.role == Role.Customer">
+    
+                <a class="nav-item nav-link  "
+                   routerLink="/category/0">
+                   Furniture
+                </a>
+                <a class="nav-item nav-link "
+                   routerLink="/category/1">
+                   Paintings
+                </a>
+                <a class="nav-item nav-link "
+                   routerLink="/category/2">
+                   Artworks
+                </a>
+                <a class="nav-item nav-link "
+                   routerLink="/category/3">
+                   Idols
+                </a>
+    
+               
+    
+            </div>
+    
+            <!-- <input type = "text" align="left" name="search" [(ngModel)]="searchText" placeholder="Search here" class="display-4 mb-5" /> -->
+            
+    
+            <div class="navbar-nav ml-auto">
+    
+                <div class="navbar-nav" *ngIf="currentUser && currentUser.role == Role.Manager">
+    
+                    <a class="nav-item nav-link h1"  routerLink="/discount">Discount</a>
+                    <a class="nav-item nav-link h1" (click)=getUsers() routerLink="/admin/user">Users</a>
+                    <a class="nav-item nav-link h1" routerLink="/seller/product">Stocks</a>
+                </div>
+                <div class="profile-wrapper" *ngIf="currentUser; else noUser">
+                    <ul class="profile-dropdown">
+                        <a class="nav-item nav-link " routerLink="/profile">
+                            {{name}}
+                        </a>
+                        <div class="li-wrapper">
+                            <li *ngIf="currentUser && currentUser.role == Role.Customer">
+                                <div class="navbar-nav">
+                                    <a class="nav-item nav-link h1"  routerLink="/wishlist">Wishlist</a>
+                                </div>
+                            </li>
+                            <li>
+                                <ng-container *ngIf="currentUser; else noUser">
+                                    <a class="nav-item nav-link " routerLink="/order">
+                                        Orders
+                                    </a>
+                                </ng-container>
+                            </li>
+                            <li>
+                                <ng-container *ngIf="currentUser; else noUser">
+                                    <a class="nav-item nav-link h1" (click)="logout()" routerLink="/login" [queryParams]="{logout: true}">
+                                        Log Out
+                                    </a>
+                                </ng-container>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+
+                <div>
+                    <ng-template #noUser>
+                        <a class="nav-item nav-link h1" routerLink="/login">
+                                Login
+                        </a>
+                        <a class="nav-item nav-link h1" routerLink="/register">
+                            Register
+                        </a>
+                    </ng-template>
+                </div>
+                
+                <a *ngIf="!currentUser || currentUser.role == Role.Customer"
+                        class="nav-item nav-link h1" routerLink="/cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    Cart
+                </a>
+                
+                </div>
+        </div>
+    </nav>
+
+    

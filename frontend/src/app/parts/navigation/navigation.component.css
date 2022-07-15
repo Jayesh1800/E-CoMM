@@ -1,0 +1,11 @@
+.nav-item{
+    font-size: 1.7rem;
+    margin: 2px;
+    padding: 2px 3px;
+    /* background: #efef;
+    border: 1px solid #eee; */
+}
+
+.nav-item:hover{
+    border-bottom: 2px solid black;
+}

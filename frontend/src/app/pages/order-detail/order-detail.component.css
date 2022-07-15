@@ -1,0 +1,36 @@
+table{
+    border: 1px solid #00000017;
+    width: 88%;
+    margin: 0 auto;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  tr{
+    border: 1px solid #00000017;
+  }
+  
+  th{
+    padding: 6px;
+  }
+  
+  td{
+    border: 1px solid #00000017;
+    padding: 0px;
+    min-width: 73px;
+  }
+  .table-title{
+    background-color: black;
+    color: white;
+  }
+
+  .total-wrapper{
+    width: 88%;
+    margin: 10px auto;
+    height: 50px;
+    /* border: 1px solid black; */
+    color: blue;
+    font-size: 12px;
+    text-align: right;
+  }
+  

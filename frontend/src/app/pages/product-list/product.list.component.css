@@ -1,0 +1,73 @@
+.isDisabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+  }
+
+table{
+  border: 1px solid #00000017;
+  width: 88%;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
+}
+
+tr{
+  border: 1px solid #00000017;
+}
+
+th{
+  padding: 6px;
+}
+
+td{
+  border: 1px solid #00000017;
+  padding: 0px;
+  min-width: 73px;
+}
+.product-table-title{
+  background-color: black;
+  color: white;
+}
+
+.download-report{
+  color: blue;
+  font-size: 12px;
+  border: 1px solid black;
+}
+
+.upload-wrapper{
+  width: 88%;
+  margin: 10px auto;
+  height: 50px;
+  /* border: 1px solid black; */
+  color: blue;
+  font-size: 12px;
+}
+
+.form-wrapper{
+  float: left;
+}
+
+.form-wrapper form{
+  display: inline-grid;
+}
+.download-wrapper{
+  float: right;
+}
+
+button{
+  border: 1px solid black;
+}
+
+
+.search-wrapper{
+  width: 88%;
+  margin: 10px auto;
+  height: 50px;
+  /* border: 1px solid black; */
+  color: blue;
+  font-size: 12px;
+  text-align: right;
+}

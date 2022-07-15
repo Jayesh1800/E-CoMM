@@ -1,0 +1,7 @@
+.column{
+    text-align: center;
+}
+
+.pagination{
+    display: inline-flex;
+}

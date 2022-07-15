@@ -1,0 +1,53 @@
+.fa-heart {
+    color :palevioletred;
+    cursor : pointer;
+}
+
+.display-4{
+    font-size: 1.5rem;
+    font-weight: 300;
+    width: 225px;
+}
+
+.search-wrapper{
+    text-align: right;
+    padding-right: 30px;
+}
+
+.card-img-top {
+    height: 300px;
+}
+
+.card{
+    width: 300px;
+    height: 450px;
+}
+
+.card-deck {
+    display: flex;
+    justify-content: center;
+}
+
+.col-lg-4 {
+    flex: 0 1 0;
+}
+
+.buy-btn{ 
+    margin-top: 20px;
+    display: block;
+}
+
+.product-data{
+    /* margin-top: 20px; */
+    font-size: 1.5rem;
+    display: inline;
+}
+
+.stock{
+    float: right;
+}
+
+
+.card-title {
+    margin-bottom: 2.75rem;
+}
